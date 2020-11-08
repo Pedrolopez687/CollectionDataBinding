@@ -1,0 +1,27 @@
+﻿<Window x:Class="CollectionDataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CollectionDataBinding"
+        mc:Ignorable="d"
+        Title="Data Binding a una colección" Height="200" Width="300">
+    <Grid>
+        <DockPanel Margin="10">
+            <Border DockPanel.Dock="Right" BorderBrush="LightGray" BorderThickness="2" Margin="4, 0, 0, 0">
+                <StackPanel Margin="4" HorizontalAlignment="Center">
+                    <Button Click="btnadduser_Click" Name="btnadduser" Content="Agregar usuario" Margin="4"></Button>
+                    <Button Click="btnchangeuser_Click" Name="btnchangeuser" Content="Modificar usuario" Margin="4"></Button>
+                    <Button Click="btndeleteuser_Click" x:Name="btndeleteuser" Content="Eliminar usuario" Margin="4"></Button>
+                </StackPanel>
+            </Border>
+            <Border DockPanel.Dock="Top" Margin="0, 0, 0, 4" BorderBrush="LightGray" BorderThickness="2">
+                <DockPanel Margin="10">
+                    <Label Content="Usuario:" Margin="2"></Label>
+                    <TextBox Name="txtbxuser" Margin="2" VerticalAlignment="Center"></TextBox>
+                </DockPanel>
+            </Border>
+            <ListBox SelectionChanged="ltbxuser_SelectionChanged" Name="ltbxuser" DisplayMemberPath="Name" SelectionMode="Single"></ListBox>
+        </DockPanel>
+    </Grid>
+</Window>
